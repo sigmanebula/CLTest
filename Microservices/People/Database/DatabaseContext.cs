@@ -1,8 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace People.Database
 {
@@ -12,7 +8,8 @@ namespace People.Database
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"data source=.; initial catalog=Microservices; persist security info=True; user id=sa; password=GDc6GlPQTNMSLPOwNQil;");
+            optionsBuilder.UseSqlServer(
+                @"data source=.; initial catalog=Microservices; persist security info=True; user id=sa; password=GDc6GlPQTNMSLPOwNQil;");
         }
     }
 }

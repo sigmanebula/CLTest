@@ -1,0 +1,41 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/api/getinfo",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "51006"
+        }
+      ],
+      "UpstreamPathTemplate": "/getinfo",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/getinfo/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "51006"
+        }
+      ],
+      "UpstreamPathTemplate": "/getinfo/{id}",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/getpoem/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "63735"
+        }
+      ],
+      "UpstreamPathTemplate": "/getpoem/{id}",
+      "UpstreamHttpMethod": [ "GET" ]
+    }
+  ]
+
+}

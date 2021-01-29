@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <style>
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 5px;
+        }
+    </style>
+    <table width="100%">
+        <tr>
+            @foreach (var title in PeopleGetter.GetTitles())
+            {
+                if (title != "Id")
+                {
+                    <th>@title</th>
+                }
+            }
+        </tr>
+        @foreach (var person in PeopleGetter.GetPeople())
+        {
+            <tr>
+                <td><img src="@person.thumbnail" alt="Alternate Text" /></td>
+                <td>@person.firstName</td>
+                <td>@person.lastName</td>
+                <td>@person.city</td>
+                <td>@person.street</td>
+                <td>@person.email</td>
+                <td>@person.gender</td>
+                <td width="150px"><div style="height:150px;overflow:auto">@person.quote</div></td>
+                <td width="150px"><div style="height:150px;overflow:auto">@person.poem</div></td>
+                <td>@person.distance.ToString()</td>
+            </tr>
+        }
+    </table>
+    <input id="button1" type="button" value="ReloadPage" onclick="javascript:location.reload()" />
+
+    <input id="button2" type="button" value="GetOne" onclick="location.href='@Url.Action("GetOnePerson","GetOne")'" />
+</div>
